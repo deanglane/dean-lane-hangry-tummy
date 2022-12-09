@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/33b85127f5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/style.css">
+    <title>hamburger menu final</title>
+    <style>
+       /* ---Basic menu--- */ 
+
+        .hamburger {
+            font-size: 30px;
+        }
+
+/* top nav will be the nav container 50px height background-color: rgb(51, 51, 51)*/
+        .top-nav {
+            height: 50px;
+            background-color: rgb(51, 51, 51);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em;
+
+        }
+
+        /* nav ul menu (flex Container)*/
+        .menu {
+            display: flex;
+        }
+
+        /* added a space on each side of the li items */
+        /* hide the overflow  */
+        .menu > li {
+            margin: 0 1em;
+            overflow: hidden;
+        }
+
+        /* what is displayed when the screen is equal to or below 767px */
+        .menu-button-container {
+            display: none;
+            width: 30px;
+            height: 100%;
+            cursor: pointer;
+            /* display: flex; */
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* hide the toggle */
+        #menu-toggle {
+            display: none;
+        }
+
+        /* building the hamburger */
+        .menu-button,
+        .menu-button::before,
+        .menu-button::after {
+            height: 3px;
+            width: 30px;
+            display: block;
+            position: absolute;
+            background-color: #FFF;
+            border-radius: 5px;
+            transition: transform 400ms ease-in-out;
+        }
+
+        /* spacing for the hamburger */
+        .menu-button::before {
+            content: "";
+            margin-top: 8px;
+        }
+        
+        /* spacing for the hamburger */
+        .menu-button::after {
+            content: "";
+            margin-top: -8px;
+        }
+        
+        /* animation when the bars are clicked */
+        #menu-toggle:checked + 
+        .menu-button-container
+        .menu-button::before {
+            margin-top: 0;
+            transform: rotate(230deg);
+        }
+        
+         /* animation when the bars are clicked */
+        #menu-toggle:checked + 
+        .menu-button-container 
+        .menu-button {
+            background-color: transparent;
+        }
+        
+         /* animation when the bars are clicked */
+        #menu-toggle:checked + 
+        .menu-button-container
+        .menu-button::after {
+            margin-top: 0;
+            transform: rotate(-230deg);
+        }
+
+        /* ---Media Queries--- */
+            
+        @media (max-width: 768px) {
+
+            /* unhiding the burger */
+            .menu-button-container {
+                display: flex;
+            }
+
+            /* positioning the burger and styling the menu*/
+            .menu {
+                position: absolute;
+                top: 0;
+                left: 0;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 50px;
+            }
+
+            /* default state before the button is clicked (Start of the animation) */
+            #menu-toggle ~ .menu li {
+                height: 0;
+                /* padding: 0; */
+                /* margin: 0; */
+                /* border: 0; */
+                transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+            }
+
+            /* what the menu does when the button is clicked w/ some styling*/
+            #menu-toggle:checked ~ .menu li {
+                height: 2.5em;
+                /* width: 100%; */
+                border: 1px solid black;
+                padding: 0.5em;
+                transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+            }
+
+            .menu > li {
+                display: flex;
+                justify-content: center;
+                /* margin: 0; */
+                background-color: #222;
+                width: 85vw;
+            }
+
+            .menu > li:hover {
+                color: #000;
+                background-color: #FFF;
+            }
+        }
+
+    </style>
+</head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <nav class="top-nav">
+                    <div>
+                        logo here
+                    </div>
+                    <input type="checkbox" id="menu-toggle" />
+                    <label class="menu-button-container" for="menu-toggle">
+                        <div class="menu-button">
+                            <span class="sr-only">Click to open the menu</span>
+                        </div>
+                    </label>
+                    <ul class="menu">
+                        <li><a href="#">home</a></li>
+                        <li><a href="#">about</a></li>
+                        <li><a href="#">blog</a></li>
+                        <li><a href="#">contact</a></li>
+                    </ul>    
+                </nav>
+                <!-- <h1>animal <span class="title-h1">refuge</span></h1> -->
+            </header>
+            <main>
+                <section>
+
+                </section>
+            </main>
+            <footer>
+
+            </footer>
+        </div>    
+    </body>
+</html>

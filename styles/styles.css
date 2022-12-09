@@ -1,0 +1,580 @@
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-  size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
+
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/* =======================
+GENERAL STYLES
+======================= */
+    
+html {
+    font-family: 'Catamaran', sans-serif;   
+    font-size: 125%; /* <-- Changes the default font size to 20px */
+    color: #1F2022;
+    line-height: 1.45rem;
+}
+    
+.wrapper {
+    max-width: 1280px;
+    width: 90%;
+    margin: 0 auto;
+}
+    
+html,
+ul,
+h1,
+h2,
+h3,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Montserrat',sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+    
+a:focus {
+    outline: 2px solid #000;
+}
+
+img {
+    max-width: 100%; /* makes images responsive if container shrinks */
+    display: block; /* removes extra padding at bottom of images */
+    height: auto;
+}
+
+.button {
+    border: 3px solid #e75605;
+    padding: 0.4em 0.8em;
+}
+
+/* =======================
+~color palette~
+Deep Orange - #e75605
+Darker Grey - #1F2022
+White - #FFFFFF
+
+~font-families~
+font-family: 'Catamaran',
+sans-serif;
+font-family: 'Montserrat',
+sans-serif;
+======================= */
+
+/* =======================
+TYPOGRAPHY
+======================= */
+
+h1,
+h2,
+h3,
+.button,
+.nav-links,
+.menu {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+h2,
+h3, 
+.button {
+    font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+i {
+    color: #e75605;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 7.32rem;
+    text-transform: capitalize;
+    line-height: 120px;
+    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 2.1rem;
+    margin-bottom: 30px;
+    line-height: 40px;
+
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #FFF;
+}
+
+
+/* =======================
+NAVIGATION - NAV(top) & FOOTER
+======================= */
+
+.top-menu {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    margin-top: 50px;
+}
+
+
+.menu {
+    display: flex;
+    justify-content: center;
+    color: #1F2022;
+    /* gap: 35px; */
+    flex-grow: 1;
+    /* padding-top: 60px; */
+}
+
+.menu > li {
+    margin: 0 0.7em;
+    overflow: hidden;
+}
+
+.menu-button-container {
+    display: none;
+    width: 30px;
+    height: 100%;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+/* building the hamburger */
+/* .menu-button,
+.menu-button::before,
+.menu-button::after {
+    height: 6px;
+    width: 60px;
+    display: block;
+    position: absolute;
+    background-color: #1F2022;
+    border-radius: 5px;
+    transition: transform 400ms ease-in-out;
+} */
+
+.menu-button::before,
+.menu-button::after {
+    height: 3px;
+    width: 50px;
+    display: block;
+    position: absolute;
+    border: solid 3px #bd5e00;
+    background-color: #bd5e00;
+    /* border-radius: 50% / 200px 200px 0 0; */
+    transition: transform 400ms ease-in-out;
+}
+.menu-button {
+    height: 6px;
+    width: 55px;
+    display: block;
+    position: absolute;
+    background-color: #401901;
+    border-radius: 5px;
+    transition: transform 400ms ease-in-out;
+}
+
+
+/* spacing for the hamburger */
+.menu-button::before {
+    content: "";
+    margin-top: 11px;
+}
+
+/* spacing for the hamburger */
+.menu-button::after {
+    content: "";
+    margin-top: -14px;
+}
+
+/* animation when the bars are clicked */
+#menu-toggle:checked+.menu-button-container .menu-button::before {
+    margin-top: 0;
+    transform: rotate(230deg);
+}
+
+ /* animation when the bars are clicked */
+#menu-toggle:checked+.menu-button-container .menu-button {
+    background-color: transparent;
+}
+
+ /* animation when the bars are clicked */
+#menu-toggle:checked+.menu-button-container .menu-button::after {
+    margin-top: 0;
+    transform: rotate(-230deg);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding-top: 60px;
+    color: #1F2022;
+}
+
+.nav-links a:hover {
+    color: #e75605;
+}
+
+/* =======================
+HEADER - HERO
+======================= */
+
+header {
+    display: flex;
+    height: 70vh;
+    align-items: center;
+}
+
+.header-image-container {
+    width: 50%;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    flex-grow: 1;
+    flex-shrink: 2;
+}
+
+header img {
+    width: 100%;
+    height: 77vh;
+    object-fit: cover;
+    object-position: right;
+
+}
+
+.h1-social {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-left: -30px;
+}
+
+.logo {
+    width: 80%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    margin-bottom: 50px;
+    min-width: 570px;
+    max-width: 768px;
+}
+
+header ul {
+    width: 20%;
+    flex-shrink: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+header li {
+    padding: 0 15px 0 5px;
+    font-size: 1.3rem;
+}
+
+
+
+
+/* =======================
+SECTION - BLOG
+======================= */
+
+.blog {
+    padding-top: 0;
+}
+
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.text-box {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 9vw;
+    padding-right: 9%;
+}
+
+.blog-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right top;
+}
+
+.image-box1 {
+    width: 50%;
+    height: 60vh;
+}
+
+.image-box2 {
+    width: 50%;
+    height: 60vh;
+}
+
+.text-box a {
+    align-self: flex-start;
+}
+
+.text-box p {
+    padding-bottom: 30px;
+}
+
+/* =======================
+SECTION - (SQUARE) DESSERTS
+======================= */
+
+.dessert-section {
+    background-color: rgb(236, 235, 235);
+    padding: 100px 0;
+}
+
+.dessert {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dessert-image-container { 
+    width: 25%;
+    min-width: 250px;
+    padding-bottom: 20px;
+}
+
+.dessert-text-container { 
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 70%;
+    padding: 0 40px 20px 40px;
+    min-width: 250px;
+}
+
+.dessert-text-container .button {
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+.dessert-text-container h2 {
+    padding-bottom: 20px;
+}
+
+/* =======================
+SECTION - NAVIGATION - ICONS
+======================= */
+
+.icn-nav-section {
+    padding: 100px 0;
+}
+
+.icn-nav {
+    background: #e75605;
+    height: 40vh;
+}
+
+.icn-nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 90px;
+}
+
+.icn-nav li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.icn-nav i {
+    color: #FFF;
+    font-size: 50px;
+    
+}
+
+/* =======================
+SECTION - INSTAGRAM
+======================= */
+
+.icn-nav-image-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.instagram-section {
+    padding: 100px 0;
+}
+
+/* .instagram {
+    flex-grow: 1;
+} */
+
+.instagram img {
+    object-fit: cover;
+    width: 31%;
+    cursor: pointer;
+}
+
+.instagram h2 {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+
+/* =======================
+FOOTER
+======================= */
+
+.footer-container {
+    background:#ecebeb;
+}
+
+footer .nav-links {
+    padding-bottom: 70px;
+}
+
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 90px;
+}
+
+.call-to-action {
+    width: 50%;
+}
+
+.contact-section h2 {
+    padding-left: 40px;
+    margin-bottom: 10px;
+}
+
+.call-to-action p {
+    padding-bottom: 5px;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+form .button {
+    background: white;
+    /* margin-top: 10px; */
+}
+
+form input {
+    padding: 0.4em 0 0.4em 0.8em ;
+    flex-grow: 1;
+    /* flex-shrink: 2; */
+    color: #727272;
+    border: none;  
+    min-width: 180px;
+}
+
+input:focus {
+    outline: 2px solid #000;
+}
+
+button[type="submit"]:focus {
+    outline: 2px solid #000;
+}
+
+.copyright {
+    background-color: #1F2022;
+    color: #727272;
+    text-align: center;
+    padding: 0.2em 0;
+    font-size: 0.75rem;
+}
+
+.fa-copyright {
+    color: #727272;
+}
+
+/* =======================
+MEDIA QUERIES
+======================= */
+    
+@media (max-width: 960px) {}
+    
+@media (max-width: 768px) {
+
+    .top-menu {
+        margin-top: 0;
+    }
+
+    /* unhiding the burger */
+    .menu-button-container {
+        display: flex;
+        flex-grow: 1;
+        align-items: flex-end;
+    }
+
+    .menu {
+        position: absolute;
+        top: 0;
+        right: 0;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* width: 100%; */
+        margin-top: 50px;
+    }
+
+    /* default state before the button is clicked (Start of the animation) */
+    #menu-toggle~.menu li {
+        height: 0;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    /* what the menu does when the button is clicked w/ some styling*/
+    #menu-toggle:checked~.menu li {
+        height: 2.5em;
+        border: 0.5px dotted #1F2022;
+        padding: 0.5em;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .menu>li {
+        display: flex;
+        justify-content: center;
+        background-color: #ecebeb;
+        width: 35vw;
+    }
+
+    .menu>li:hover {
+        color: #000;
+        background-color: #FFF;
+    }
+}
+    
+@media (max-width: 480px) {}
