@@ -435,18 +435,19 @@ SECTION - INSTAGRAM
 
 .icn-nav-image-container {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
     gap: 20px;
+}
+
+.icn-nav-image-container ul {
+    width: calc(100% / 3);
 }
 
 .instagram-section {
     padding: 100px 0;
 }
 
-.instagram img {
+.gram {
     object-fit: cover;
-    width: 31%;
     cursor: pointer;
 }
 
@@ -690,19 +691,17 @@ MEDIA QUERIES
     }
 
     .gram3 {
-        display: none;    
+        display: none;  
     }
 
-    .instagram img {
-        object-fit: cover;
-        width: calc((100% / 2) - 10px);
+    .icn-nav-image-container ul {
+        width: calc(100% / 2);
 }
 
     /* ====Footer===== */
 
     .contact-section {
         flex-direction: column;
-        /* align-items: center; */
         text-align: center;
         gap: 20px;
     }
@@ -724,9 +723,15 @@ MEDIA QUERIES
 }
 @media (max-width: 480px) {
     
-    /* ====Footer===== */
+    /* ====Instagram===== */
 
-    
+    .icn-nav-image-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    /* ====Footer===== */
 
     form {
         flex-direction: column;
