@@ -230,7 +230,6 @@ NAVIGATION - NAV(top) & FOOTER
     display: flex;
     justify-content: center;
     gap: 50px;
-    padding-top: 60px;
     color: #1F2022;
 }
 
@@ -357,19 +356,30 @@ SECTION - (SQUARE) DESSERTS
 
 .dessert {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
+    gap: 40px;
 }
 
 .dessert-image-container { 
     width: 25%;
+    flex-grow: 1;
     min-width: 250px;
     padding-bottom: 20px;
+    display: flex;
+}
+
+.dessert-image-container img {
+    margin: 0 auto;
+    width: 100%;
+    flex-grow: 0;
+    align-self: center;
 }
 
 .dessert-text-container { 
     display: flex;
     flex-direction: column;
+    /* flex-basis: 100%; */
     flex-grow: 1;
     width: 70%;
     padding: 0 40px 20px 0;
@@ -378,7 +388,7 @@ SECTION - (SQUARE) DESSERTS
 
 .dessert-text-container .button {
     align-self: flex-start;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 .dessert-text-container h2 {
@@ -427,15 +437,12 @@ SECTION - INSTAGRAM
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .instagram-section {
     padding: 100px 0;
 }
-
-/* .instagram {
-    flex-grow: 1;
-} */
 
 .instagram img {
     object-fit: cover;
@@ -458,7 +465,7 @@ FOOTER
 }
 
 footer .nav-links {
-    padding-bottom: 70px;
+    padding: 50px 0;
 }
 
 .contact-section {
@@ -467,12 +474,15 @@ footer .nav-links {
     padding-bottom: 90px;
 }
 
+address {
+    flex-shrink: 2;
+}
+
 .call-to-action {
-    width: 50%;
+    width: 55%;
 }
 
 .contact-section h2 {
-    padding-left: 40px;
     margin-bottom: 10px;
 }
 
@@ -508,7 +518,7 @@ button[type="submit"]:focus {
 }
 
 .copyright {
-    background-color: #1F2022;
+    background-color: #131415;
     color: #727272;
     text-align: center;
     padding: 0.2em 0;
@@ -526,6 +536,19 @@ MEDIA QUERIES
 @media (max-width: 960px) {}
     
 @media (max-width: 768px) {
+
+    .wrapper {
+        width: 90%;
+    }
+
+    /* ====TYPOGRAPHY===== */
+
+    p {
+        font-size: 1.2rem;
+        line-height: 40px;
+    }
+
+    /* ====Navigation Hamburger Styling===== */
 
     .top-menu {
         margin-top: 0;
@@ -574,6 +597,152 @@ MEDIA QUERIES
         color: #000;
         background-color: #FFF;
     }
-}
+
+    /* ====Header - Hero===== */
+
+    header img {
+        object-position: 70%;
+    }
+
+    header {
+        /* display: block; */
+        order: 1;
+    }
+
+    .h1-social {
+        flex-direction: column;
+    }
+
+    /* ====Blog section===== */
+
+    .blog-container {
+        flex-direction: column;
+    }
+
+    .text-box {
+        width: 100%;
+        order: 1;
+        /* align-items: center; */
+        padding: 80px 7.5% 80px;
+    }
+
+    .text-box {
+        text-align: center;
+    }
+
+    .image-box {
+        width: 100%;
+        height: 40vh;
+    }
+
+    .text-box .button {
+        align-self: center;
+    }
+
+    /* ====Dessert (square) section===== */
+
+    .dessert {
+        flex-wrap: wrap;
+    }
+
+    .dessert-text-container {
+        padding-right: 0;
+    }
+
+    .dessert-text-container h2 {
+        text-align: center;
+    }
+
+    .dessert-text-container .button {
+        align-self: center;
+        padding: 0.4em 2.5em;
+    }
+
+    .dessert-image-container {
+        width: 100%;
+    }
+
+    .dessert-image-container img {
+        width: 100%;
+        height: 90%;
+    }
     
-@media (max-width: 480px) {}
+    /* ====Icon Section===== */
+
+    .icn-nav {
+        height: 100%;
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+
+    .icn-nav ul {
+        flex-direction: column;
+    }
+    .icn-nav i {
+        font-size: 100px;
+    }
+
+    /* ====Instagram Section===== */
+
+    .instagram-section {
+        padding-top: 60px;
+        padding-bottom: 90px;
+    }
+
+    .gram3 {
+        display: none;    
+    }
+
+    .instagram img {
+        object-fit: cover;
+        width: calc((100% / 2) - 10px);
+}
+
+    /* ====Footer===== */
+
+    .contact-section {
+        flex-direction: column;
+        /* align-items: center; */
+        text-align: center;
+        gap: 20px;
+    }
+
+    .call-to-action {
+        width: 100%;
+    }
+
+    .contact-section h2 {
+        font-size: 1.75rem;
+        width: 100%;
+    }
+
+    .copyright {
+        font-size: 0.9em;
+        padding: 0.2em 1.5em;
+    }
+
+}
+@media (max-width: 480px) {
+    
+    /* ====Footer===== */
+
+    
+
+    form {
+        flex-direction: column;
+    }
+
+    form input {
+        margin-bottom: 20px;
+    }
+    .copyright {
+        font-size: 0.2rem;
+        padding: 0.2em 1.5em;
+    }
+
+    .nav-links {
+        gap: 30px;
+        flex-direction: column;
+        align-items: center;
+    }
+}
