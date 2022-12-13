@@ -141,7 +141,7 @@ NAVIGATION - NAV(top) & FOOTER
 }
 
 ul.menu a:hover,
-ul.menu a:focus {
+ul.menu a:focus-within {
     color: #e75605;
 }
 
@@ -151,7 +151,8 @@ ul.menu a:focus {
 }
 
 .menu-button-container {
-    display: none;
+    /* display: none; */
+    visibility: hidden;
     width: 30px;
     height: 100%;
     cursor: pointer;
@@ -172,7 +173,7 @@ ul.menu a:focus {
     position: absolute;
     border: solid 3px #e75605;
     background-color: #e75605;
-    transition: transform 400ms ease-in-out;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 .menu-button {
     height: 6px;
@@ -181,7 +182,7 @@ ul.menu a:focus {
     position: absolute;
     background-color: #793f1b;
     border-radius: 5px;
-    transition: transform 400ms ease-in-out;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 
@@ -562,6 +563,7 @@ MEDIA QUERIES
 
     /* unhiding the burger */
     .menu-button-container {
+        visibility: visible;
         display: flex;
         flex-grow: 1;
         align-items: flex-end;
