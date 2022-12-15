@@ -12,9 +12,14 @@
     <link rel="stylesheet" href="./styles/styles.css">
     <title>Hangry Tummy</title>
 </head>
+
 <body>
+
+    <!-- ====Navigation===== -->
     <nav class="top-menu">
-        <ul class="menu">
+
+        <!-- main menu -->
+        <ul class="nav-links">
             <li>
                 <a href="#">home</a>
             </li>
@@ -22,12 +27,14 @@
                 <a href="#">about</a>
             </li>
             <li>
-                <a href="#">blog</a>
+                <a href="#blog">blog</a>
             </li>
             <li>
-                <a href="#">contact</a>
+                <a href="#contact">contact</a>
             </li>
         </ul>
+
+        <!-- hamburger menu - hidden on desktop  -->
         <div class="button-container">
             <button class="menu-button">
                 <i class="fa-solid fa-bars"></i>
@@ -35,15 +42,20 @@
         </div>
     </nav>
 
+    <!-- ====Header===== -->
     <header>
         <div class="header-image-container">
             <div class="image">
                 <img src="./assets/header-burger.png" alt="Big juicy delicious burger">
-            </div>    
+            </div>
+
+            <!-- logo     -->
             <div class="h1-social">
                 <div class="logo">    
                     <h1>hangry <br />tummy</h1>
                 </div>
+
+                <!-- social media icons and links -->
                 <ul class="social">
                     <li>
                         <a href="#">
@@ -69,11 +81,15 @@
             </div>
         </div>        
     </header>
+
+    <!-- ====Main Content area===== -->
     <main>
 
-        <!-- Blog Section -->
-        <section class="blog">
+        <!-- ====Blog Section===== -->
+        <section class="blog" id="blog">
             <div class="wrap">
+
+                <!-- top row blog section -->
                 <div class="blog-container">
                     <div class="text-box">
                         <h2>new to our menu</h2>
@@ -87,6 +103,7 @@
                     </div>
                 </div>
 
+                <!-- bottom row blog section -->
                 <div class="blog-container">
                     <div class="image-box">
                         <img class="blog-image" src="./assets/left-photo.jpg" alt="Plates full of fries, breakfast foods and pies">
@@ -103,7 +120,7 @@
             </div>    
         </section>
 
-        <!-- Desserts (square) Section -->
+        <!-- ====Desserts (square) Section===== -->
         <section class="dessert-section">
             <div class="wrapper">
                 <div class="dessert">
@@ -119,7 +136,7 @@
             </div>        
         </section>
 
-        <!-- Icon Navigation Section -->
+        <!-- ====Icon Navigation Section===== -->
         <section>
             <nav class="icn-nav">
                 <ul>
@@ -139,7 +156,7 @@
             </nav>
         </section>
         
-        <!-- Instagram Section -->
+        <!-- ====Instagram Section===== -->
         <section class="instagram-section">
             <div class="wrapper instagram">
                 <h2>the gram</h2>
@@ -157,9 +174,13 @@
             </div>
         </section>
 
-    </main>
+    </main> <!-- end of main section-->
+
+    <!-- ====Footer section===== -->
     <footer class="footer-container">
         <div class="wrapper">
+
+            <!-- footer navigation -->
             <nav>
                 <ul class="nav-links">
                     <li>
@@ -169,14 +190,16 @@
                         <a href="#">about</a>
                     </li>
                     <li>
-                        <a href="#">blog</a>
+                        <a href="#blog">blog</a>
                     </li>
                     <li>
-                        <a href="#">contact</a>
+                        <a href="#contact">contact</a>
                     </li>
                 </ul>
             </nav>
-            <div class="contact-section">
+
+            <!-- address area -->
+            <div class="contact-section" id="contact">
                 <div class="address">
                     <h2>contact</h2>
                     <address>
@@ -185,10 +208,13 @@
                         <p>A5A 5A5, Canada</p> 
                     </address>
                 </div>
+
+                <!-- call to action -->
                 <div class="call-to-action">
                     <h2>stay updated</h2>
                     <p>Subscribe to our newsletter to stay updated.</p>
 
+                    <!-- email submission form -->
                     <form action="http://httpbin.org/post" method="post" id="my-form" name="myForm">
                         <label for="email"></label>
                         <input id="email" type="email" name="email" placeholder="email address">
@@ -198,9 +224,12 @@
                 </div>
             </div>
         </div>
+
+        <!-- copyright area -->
         <div class="copyright">
             <p>Copyright <span><i class="fa-regular fa-copyright"></i></span> 2019 Juno College</p>
         </div>
+
     </footer>
 
 </body>

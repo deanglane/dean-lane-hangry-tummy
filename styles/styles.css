@@ -30,7 +30,7 @@ p,
 ul {
     margin: 0;
     padding: 0;
-    list-style: none;
+    list-style: none; 
 }
 
 h1,
@@ -133,21 +133,19 @@ NAVIGATION - NAV(top) & FOOTER
     margin-top: 50px;
 }
 
-.menu {
+/* navigation links */
+.nav-links {
     display: flex;
     justify-content: center;
+    gap: 50px;
     color: #1F2022;
 }
 
-.menu li {
-    margin: 0 1em;
-}
-
-ul.menu a:hover,
-ul.menu a:focus-within {
+.nav-links a:hover {
     color: #e75605;
 }
 
+/* hamburger button */
 .menu-button {
     font-size: 3.5rem;
     display: none;
@@ -160,16 +158,6 @@ ul.menu a:focus-within {
     outline: 2px solid #e75605;
 }
 
-.nav-links {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    color: #1F2022;
-}
-
-.nav-links a:hover {
-    color: #e75605;
-}
 
 /* =======================
 HEADER - HERO
@@ -239,11 +227,12 @@ SECTION - BLOG
     padding: 0 7.5% 0 7.5%;
 }
 
-.blog-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: right top;
+.text-box a {
+    align-self: flex-start;
+}
+
+.text-box p {
+    padding-bottom: 30px;
 }
 
 .image-box {
@@ -251,12 +240,11 @@ SECTION - BLOG
     height: 50vh;
 }
 
-.text-box a {
-    align-self: flex-start;
-}
-
-.text-box p {
-    padding-bottom: 30px;
+.blog-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right top;
 }
 
 /* =======================
@@ -376,10 +364,12 @@ FOOTER
     background:#ecebeb;
 }
 
+/* navigation area */
 footer .nav-links {
     padding: 50px 0;
 }
 
+/* address area  */
 .contact-section {
     display: flex;
     justify-content: space-between;
@@ -390,6 +380,7 @@ address {
     flex-shrink: 2;
 }
 
+/* call to action area */
 .call-to-action {
     width: 55%;
 }
@@ -427,6 +418,7 @@ button[type="submit"]:focus {
     outline: 2px solid #000;
 }
 
+/* copyright area */
 .copyright {
     background-color: #131415;
     color: #727272;
@@ -513,7 +505,7 @@ MEDIA QUERIES
         display: flex;
     }
 
-    .menu {
+    .top-menu li {
         visibility: hidden;
         display: none;
     }
@@ -646,7 +638,7 @@ MEDIA QUERIES
 @media (max-width: 480px) {
     
     /* ====COMMENT===== */
-    .logo {
+    .logo h1 {
         margin: 0;
     }
 
@@ -672,7 +664,7 @@ MEDIA QUERIES
         padding: 0.2em 1.5em;
     }
 
-    .nav-links {
+    .footer-container .nav-links {
         gap: 30px;
         flex-direction: column;
         align-items: center;
