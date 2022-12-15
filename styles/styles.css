@@ -127,7 +127,7 @@ NAVIGATION - NAV(top) & FOOTER
 .top-menu {
     height: 50px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 1.2em;
     margin-top: 50px;
@@ -137,12 +137,10 @@ NAVIGATION - NAV(top) & FOOTER
     display: flex;
     justify-content: center;
     color: #1F2022;
-    flex-grow: 1;
 }
 
-.menu > li {
-    margin: 0 0.7em;
-    overflow: hidden;
+.menu li {
+    margin: 0 1em;
 }
 
 ul.menu a:hover,
@@ -150,69 +148,16 @@ ul.menu a:focus-within {
     color: #e75605;
 }
 
-.menu-button-container {
-    /* display: none; */
-    visibility: hidden;
-    width: 30px;
-    height: 100%;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-#menu-toggle {
-    display: none;
-}
-
-.menu-button::before,
-.menu-button::after {
-    height: 3px;
-    width: 50px;
-    display: block;
-    position: absolute;
-    border: solid 3px #e75605;
-    background-color: #e75605;
-    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
-}
 .menu-button {
-    height: 6px;
-    width: 55px;
-    display: block;
-    position: absolute;
-    background-color: #793f1b;
-    border-radius: 5px;
-    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    font-size: 3.5rem;
+    display: none;
+    border: none;
+    background: transparent;
+    margin-bottom: 40px;
 }
 
-
-/* spacing for the hamburger */
-.menu-button::before {
-    content: "";
-    margin-top: 11px;
-}
-
-/* spacing for the hamburger */
-.menu-button::after {
-    content: "";
-    margin-top: -14px;
-}
-
-/* animation when the bars are clicked */
-#menu-toggle:checked+.menu-button-container .menu-button::before {
-    margin-top: 0;
-    transform: rotate(230deg);
-}
-
- /* animation when the bars are clicked */
-#menu-toggle:checked+.menu-button-container .menu-button {
-    background-color: transparent;
-}
-
- /* animation when the bars are clicked */
-#menu-toggle:checked+.menu-button-container .menu-button::after {
-    margin-top: 0;
-    transform: rotate(-230deg);
+.menu-button:focus {
+    outline: 2px solid #e75605;
 }
 
 .nav-links {
@@ -537,6 +482,7 @@ MEDIA QUERIES
     h1 {
         font-size: 4.1rem;
         line-height: 85px;
+        margin: 0 20px;
     }
     
 }
@@ -557,53 +503,23 @@ MEDIA QUERIES
 
     /* ====Navigation Hamburger Styling===== */
 
-    .top-menu {
-        margin-top: 0;
+    .button-container {
+        display: flex;
+        width: 85vw;
+        justify-content: flex-end;
     }
 
-    /* unhiding the burger */
-    .menu-button-container {
-        visibility: visible;
+    .menu-button {
         display: flex;
-        flex-grow: 1;
-        align-items: flex-end;
     }
 
     .menu {
-        position: absolute;
-        top: 0;
-        right: 0;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        /* width: 100%; */
-        margin-top: 50px;
+        visibility: hidden;
+        display: none;
     }
 
-    /* default state before the button is clicked (Start of the animation) */
-    #menu-toggle~.menu li {
-        height: 0;
-        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-    }
-
-    /* what the menu does when the button is clicked w/ some styling*/
-    #menu-toggle:checked~.menu li {
-        height: 2.5em;
-        border: 0.5px solid #1F2022;
-        padding: 0.5em;
-        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-    }
-
-    .menu>li {
-        display: flex;
-        justify-content: center;
-        background-color: #ecebeb;
-        width: 35vw;
-    }
-
-    .menu>li:hover {
-        color: #000;
-        background-color: #FFF;
+    .menu-button i {
+        color: #1F2022;
     }
 
 
@@ -614,7 +530,6 @@ MEDIA QUERIES
     }
 
     header {
-        /* display: block; */
         order: 1;
     }
 
@@ -631,7 +546,6 @@ MEDIA QUERIES
     .text-box {
         width: 100%;
         order: 1;
-        /* align-items: center; */
         padding: 80px 7.5% 80px;
     }
 
@@ -731,6 +645,11 @@ MEDIA QUERIES
 }
 @media (max-width: 480px) {
     
+    /* ====COMMENT===== */
+    .logo {
+        margin: 0;
+    }
+
     /* ====Instagram===== */
 
     .icn-nav-image-container {
